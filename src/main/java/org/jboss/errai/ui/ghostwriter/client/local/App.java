@@ -16,18 +16,42 @@
 package org.jboss.errai.ui.ghostwriter.client.local;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.event.Observes;
+import javax.enterprise.inject.Instance;
+import javax.inject.Inject;
 
 import org.jboss.errai.ioc.client.api.EntryPoint;
+import org.jboss.errai.ui.ghostwriter.client.shared.FragmentAdded;
+import org.jboss.errai.ui.shared.api.annotations.DataField;
+import org.jboss.errai.ui.shared.api.annotations.Templated;
 
-import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * Main application entry point.
  */
 @EntryPoint
-public class App {
-	@PostConstruct
-	public void setup() {
-		Window.alert("Hello, from Errai!");
-	}
+@Templated("Mockup.html#app-template")
+public class App extends Composite {
+
+  @DataField
+  private HTMLPanel fragments = new HTMLPanel("p", "> ");
+
+  @Inject
+  @DataField("fragment-form")
+  private FragmentFormWidget form;
+
+  @PostConstruct
+  public void setup() {
+    RootPanel.get().add(this);
+  }
+
+  @Inject
+  private Instance<FragmentWidget> fragmentInstance;
+
+  void handleFragmentAdded(@Observes FragmentAdded event) {
+    fragments.add(fragmentInstance.get().setFragment(event.getFragment()));
+  }
 }

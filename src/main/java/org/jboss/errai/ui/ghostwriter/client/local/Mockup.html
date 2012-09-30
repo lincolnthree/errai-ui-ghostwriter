@@ -33,20 +33,22 @@
 
 <body>
 
-	<div class="container">
+	<div data-field="app-template" class="container">
 		<h1 style="margin-top: 50px;">It all started when...</h1>
 		<hr />
 		<div class="row">
 			<div class="span9 cols">
-					<span class="fragment"><a class="fragment-text">Little Jenny went to the store store to buy a lap-top,</a></span>
+				<p data-field="fragments" >
+					<span data-field="fragment" class="fragment"><a data-field="fragment-text" class="fragment-text">Little Jenny went to the store store to buy a lap-top,</a></span>
 					<span class="fragment"><a class="fragment-text">but they sued her</a></span>
 					<span class="fragment"><a class="fragment-text">and she was sad.</a></span>
+				</p>
 			</div>
-			<div class="span3 cols">
+			<div data-field="fragment-form" class="span3 cols">
 				<legend>What happens next?</legend>
-				<input type="text" name="name" placeholder="Your name" tabindex="1" autofocus="autofocus" style="width: 100%">
-				<textarea rows="3" tabindex="2" style="width: 100%" placeholder="Your plot"></textarea>
-				<button type="submit" tabindex="4" class="btn btn-primary btn-large">Submit</button>
+				<input data-field="name" type="text" name="name" placeholder="Your name" tabindex="1" autofocus="autofocus" style="width: 100%">
+				<textarea data-field="text" rows="3" tabindex="2" style="width: 100%" placeholder="Your plot"></textarea>
+				<button data-field="submit" type="submit" tabindex="4" class="btn btn-primary btn-large">Submit</button>
 			</div>
 		</div>
 
