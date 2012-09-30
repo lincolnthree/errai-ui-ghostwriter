@@ -1,0 +1,50 @@
+/*
+ * Debugging styles
+ */
+.gwt-DialogBox {
+	z-index: 10000;
+}
+
+/*
+ * Application styles
+ */
+.fragment {
+	font-size: 1.1em;
+	padding: 2px;
+	padding-right: 0px;
+	margin-right: 2px;
+}
+
+.fragment a {
+	color: #000;
+}
+
+.fragment a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.fragment:hover {
+	background: #eec;
+	-webkit-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-moz-border-radius-topright: 7px;
+	-moz-border-radius-topleft: 7px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	-moz-border-radius-bottomright: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+.fragment .fragment-delete {
+	padding: 2px;
+	visibility: hidden;
+}
+
+.fragment:hover .fragment-delete {
+	visibility: visible;
+}
